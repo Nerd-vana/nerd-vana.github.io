@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .directory-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .directory-list li {
+            margin: 10px 0;
+        }
+        .directory-list a {
+            text-decoration: none;
+            color: #1a73e8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Portal Page</h1>
+        <ul id="directoryList" class="directory-list"></ul>
+    </div>
+    <script>
+        // Assuming this list is generated dynamically
+        const directories = ['subdir1', 'subdir2', 'subdir3', 'subdir4'];
+
+        const directoryList = document.getElementById('directoryList');
+
+        directories.forEach(dir => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = `./${dir}/index.html`;  // Adjust path as necessary
+            link.textContent = dir;
+            listItem.appendChild(link);
+            directoryList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
